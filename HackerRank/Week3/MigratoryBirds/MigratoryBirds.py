@@ -15,18 +15,12 @@ import sys
 
 def migratoryBirds(arr):
     # Write your code here
-    num_dict = {}
+    num_arr = [0,0,0,0,0,0]
     for i in arr :
-        if i not in num_dict :
-            num_dict[i] = 0
-        num_dict[i] += 1
+        num_arr[i] += 1
+
+    return num_arr.index(max(num_arr))
     
-    key_arr = []
-    for key, value in num_dict.items():
-        if value == max(num_dict.values()) :
-            key_arr.append(key)
-    
-    return min(key_arr)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
