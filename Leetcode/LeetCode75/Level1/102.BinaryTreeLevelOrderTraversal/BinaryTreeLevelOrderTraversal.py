@@ -28,6 +28,3 @@ class Solution:
                 answer.append(values)
 
         return answer
-
-
-    
