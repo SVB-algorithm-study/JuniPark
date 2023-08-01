@@ -15,15 +15,15 @@ class Solution:
         right_products = [1] * n
         answer = [1] * n
 
-        # 각 원소의 왼쪽 부분 곱 계산
+        # Calculate the product of the left part of each element
         for i in range(1, n):
             left_products[i] = left_products[i - 1] * nums[i - 1]
 
-        # 각 원소의 오른쪽 부분 곱 계산
+        # Calculate the right partial product of each element
         for i in range(n - 2, -1, -1):
             right_products[i] = right_products[i + 1] * nums[i + 1]
             
-        # 정답 계산
+        # Calculate the answer
         for i in range(n):
             answer[i] = left_products[i] * right_products[i]
 
